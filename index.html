@@ -4,23 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Deck2Deal</title>
-    <!-- Подключение TailwindCSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      /* Стиль для десктопной версии (по умолчанию) */
-      .bg-custom {
-        background-image: url('https://raw.githubusercontent.com/Saint-Mikolai/deck2deal_images/main/deck2deal_all_.jpg');
-      }
-      
-      /* Стиль для мобильной версии */
-      @media (max-width: 768px) {
-        .bg-custom {
-          background-image: url('https://raw.githubusercontent.com/Saint-Mikolai/deck2deal_images/main/deck2deal_all_m.jpg');
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            backgroundImage: {
+              'desktop': "url('https://raw.githubusercontent.com/Saint-Mikolai/deck2deal_images/main/deck2deal_all_.jpg')",
+              'mobile': "url('https://raw.githubusercontent.com/Saint-Mikolai/deck2deal_images/main/deck2deal_all_m.jpg')"
+            }
+          }
         }
       }
-    </style>
+    </script>
   </head>
-  <body class="bg-custom bg-cover bg-center min-h-screen">
+  <body class="md:bg-desktop bg-mobile bg-cover bg-center min-h-screen">
     <div class="flex flex-col items-center min-h-screen">
       <!-- Кнопка Contacts -->
       <div class="pb-8">
@@ -31,6 +29,21 @@
           Contacts
         </a>
       </div>
+    </div>
+    
+    <!-- Добавляем прелоадер для изображений -->
+    <link 
+      rel="preload" 
+      href="https://raw.githubusercontent.com/Saint-Mikolai/deck2deal_images/main/deck2deal_all_.jpg" 
+      as="image"
+    />
+    <link 
+      rel="preload" 
+      href="https://raw.githubusercontent.com/Saint-Mikolai/deck2deal_images/main/deck2deal_all_m.jpg" 
+      as="image"
+    />
+  </body>
+</html>
     </div>
   </body>
 </html>
