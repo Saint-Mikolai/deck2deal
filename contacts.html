@@ -133,7 +133,7 @@
           }, 1000);
           
           // Optionally, you can still use mailto as a fallback
-          const mailtoUrl = `mailto:tata@deck2deal.com?subject=Contact from ${encodeURIComponent(data.name)}&body=${encodeURIComponent(data.message)}%0D%0A%0D%0AFrom: ${encodeURIComponent(data.email)}`;
+          const mailtoUrl = `mailto:contact@deck2deal.com?subject=Contact from ${encodeURIComponent(data.name)}&body=${encodeURIComponent(data.message)}%0D%0A%0D%0AFrom: ${encodeURIComponent(data.email)}`;
           window.location.href = mailtoUrl;
         }
       });
