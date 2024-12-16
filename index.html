@@ -1,57 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
-   <meta charset="UTF-8" />
-   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <title>Deck2Deal</title>
-   <script src="https://cdn.tailwindcss.com"></script>
-   <style>
-     body {
-       background-image: url('https://raw.githubusercontent.com/Saint-Mikolai/deck2deal_images/main/deck2deal_all_.jpg');
-       background-size: cover;
-       background-position: center;
-       min-height: 100vh;
-       display: flex;
-       align-items: flex-end;
-       justify-content: center;
-     }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deck2Deal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        background-image: url('https://raw.githubusercontent.com/Saint-Mikolai/deck2deal_images/main/deck2deal_all_.jpg');
+        background-size: cover;
+        background-position: center;
+        min-height: 100vh;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+      }
 
-     @media only screen and (max-width: 768px) {
-       body {
-         background-image: url('https://raw.githubusercontent.com/Saint-Mikolai/deck2deal_images/main/deck2deal_all_m.jpg');
-         background-size: contain;
-         background-repeat: no-repeat;
-         background-position: center top;
-       }
-     }
+      @media only screen and (max-width: 768px) {
+        body {
+          background-image: url('https://raw.githubusercontent.com/Saint-Mikolai/deck2deal_images/main/deck2deal_all_m.jpg');
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center top;
+        }
+        
+        .contact-container {
+          position: absolute;
+          top: 65%; /* Подняли позицию выше */
+          left: 0;
+          right: 0;
+          margin-bottom: 0; /* Убрали нижний отступ для мобильной версии */
+        }
+      }
 
-     .contact-container {
-       margin-bottom: 8%; /* Регулируйте это значение для вертикального положения */
-       width: 100%;
-       text-align: center;
-     }
+      .contact-container {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 8%; /* Отступ для десктопной версии */
+      }
 
-     .contact-link {
-       color: #00CED1; /* Более темный оттенок бирюзового */
-       font-size: 1.2rem;
-       letter-spacing: 2px;
-       text-transform: uppercase;
-       transition: opacity 0.3s ease;
-     }
+      .contact-link {
+        color: #00CED1;
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        transition: opacity 0.3s ease;
+      }
 
-     .contact-link:hover {
-       opacity: 0.8;
-     }
-   </style>
- </head>
- <body>
-   <div class="contact-container">
-     <a 
-       href="contacts.html" 
-       class="contact-link"
-     >
-       Contact Deck2Deal
-     </a>
-   </div>
- </body>
+      .contact-link:hover {
+        opacity: 0.8;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contact-container">
+      <a 
+        href="contacts.html" 
+        class="contact-link"
+      >
+        Contact Deck2Deal
+      </a>
+    </div>
+  </body>
 </html>
