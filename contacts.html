@@ -4,14 +4,61 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Us - Deck2Deal</title>
-    <!-- Подключение TailwindCSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .form-field-error {
+        color: #dc2626;
+        font-size: 0.875rem;
+        margin-top: 0.25rem;
+      }
+      
+      .invalid-field {
+        border-color: #dc2626 !important;
+      }
+      
+      .success-message {
+        display: none;
+        color: #059669;
+      }
+    </style>
   </head>
   <body class="bg-cover bg-center min-h-screen" style="background-image: url('https://raw.githubusercontent.com/Saint-Mikolai/deck2deal_images/main/deck2deal_back.jpg');">
     <div class="flex flex-col items-center justify-center min-h-screen p-4">
       <div class="bg-white/90 backdrop-blur-sm p-4 sm:p-8 rounded-lg shadow-xl w-full max-w-md">
         <h1 class="text-2xl font-bold text-center mb-6">Contact Us</h1>
-        <form action="mailto:tata@deck2deal.com" method="post" enctype="text/plain" class="space-y-6">
+        
+        <!-- Success Message -->
+        <div id="successMessage" class="success-message text-center mb-4">
+          <p class="text-lg font-medium">Message sent successfully!</p>
+          <p class="text-sm mt-2">We'll get back to you soon.</p>
+        </div>
+
+        <form id="contactForm" class="space-y-6">
+          <!-- Name Field -->
+          <div>
+            <input
+              type="text"
+              name="name"
+              placeholder="Your name"
+              required
+              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
+            />
+            <div class="form-field-error hidden"></div>
+          </div>
+
+          <!-- Email Field -->
+          <div>
+            <input
+              type="email"
+              name="email"
+              placeholder="Your email"
+              required
+              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
+            />
+            <div class="form-field-error hidden"></div>
+          </div>
+
+          <!-- Message Field -->
           <div>
             <textarea 
               name="message" 
@@ -19,7 +66,9 @@
               required
               class="w-full h-40 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent resize-none"
             ></textarea>
+            <div class="form-field-error hidden"></div>
           </div>
+
           <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 sm:justify-between">
             <a 
               href="index.html" 
@@ -29,6 +78,7 @@
             </a>
             <button 
               type="submit" 
+              id="submitButton"
               class="w-full sm:w-auto px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors duration-300 text-base sm:text-lg font-medium"
             >
               Send
@@ -37,5 +87,74 @@
         </form>
       </div>
     </div>
+
+    <script>
+      document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Reset previous errors
+        clearErrors();
+        
+        // Get form data
+        const formData = new FormData(this);
+        const data = Object.fromEntries(formData);
+        
+        // Validate form
+        let isValid = true;
+        
+        // Name validation
+        if (!data.name.trim()) {
+          showError('name', 'Name is required');
+          isValid = false;
+        }
+        
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(data.email)) {
+          showError('email', 'Please enter a valid email address');
+          isValid = false;
+        }
+        
+        // Message validation
+        if (!data.message.trim()) {
+          showError('message', 'Message is required');
+          isValid = false;
+        }
+        
+        if (isValid) {
+          // Disable submit button
+          document.getElementById('submitButton').disabled = true;
+          
+          // Here you would typically send the data to your server
+          // For demonstration, we'll just show the success message
+          setTimeout(() => {
+            document.getElementById('contactForm').style.display = 'none';
+            document.getElementById('successMessage').style.display = 'block';
+          }, 1000);
+          
+          // Optionally, you can still use mailto as a fallback
+          const mailtoUrl = `mailto:tata@deck2deal.com?subject=Contact from ${encodeURIComponent(data.name)}&body=${encodeURIComponent(data.message)}%0D%0A%0D%0AFrom: ${encodeURIComponent(data.email)}`;
+          window.location.href = mailtoUrl;
+        }
+      });
+
+      function showError(fieldName, message) {
+        const field = document.querySelector(`[name="${fieldName}"]`);
+        const errorDiv = field.nextElementSibling;
+        field.classList.add('invalid-field');
+        errorDiv.textContent = message;
+        errorDiv.classList.remove('hidden');
+      }
+
+      function clearErrors() {
+        document.querySelectorAll('.form-field-error').forEach(div => {
+          div.classList.add('hidden');
+          div.textContent = '';
+        });
+        document.querySelectorAll('.invalid-field').forEach(field => {
+          field.classList.remove('invalid-field');
+        });
+      }
+    </script>
   </body>
 </html>
