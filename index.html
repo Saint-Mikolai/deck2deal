@@ -33,7 +33,7 @@
         text-transform: uppercase;
         transition: opacity 0.3s ease;
         padding: 10px 20px;
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: rgba(128, 128, 128, 0.3);
         border-radius: 4px;
       }
 
@@ -51,28 +51,31 @@
         }
 
         .contact-container {
-          bottom: 5%; /* Уменьшаем отступ снизу для мобильных */
-          width: 90%; /* Увеличиваем ширину контейнера */
-          max-width: 300px; /* Ограничиваем максимальную ширину */
+          bottom: 15%; /* Увеличиваем отступ снизу */
+          width: 80%; /* Уменьшаем ширину контейнера */
+          max-width: 280px;
         }
 
         .contact-link {
-          font-size: 1rem; /* Уменьшаем размер шрифта */
-          padding: 8px 16px; /* Уменьшаем padding */
-          white-space: nowrap; /* Предотвращаем перенос текста */
-          display: block; /* Растягиваем на всю ширину контейнера */
+          font-size: 1rem;
+          padding: 12px 20px;
+          background-color: rgba(128, 128, 128, 0.3); /* Полупрозрачный серый фон */
+          display: block;
+          width: 100%;
+          text-align: center;
         }
       }
 
       /* Медиа-запрос для мобильных устройств в ландшафтной ориентации */
       @media only screen and (max-width: 896px) and (orientation: landscape) {
         .contact-container {
-          bottom: 5%;
+          bottom: 10%;
         }
 
         .contact-link {
           font-size: 1rem;
-          padding: 6px 12px;
+          padding: 8px 16px;
+          background-color: rgba(128, 128, 128, 0.3);
         }
       }
     </style>
