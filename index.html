@@ -16,27 +16,19 @@
         justify-content: center;
       }
 
-      @media only screen and (max-width: 768px) {
+      @media only screen and (max-width: 768px) and (orientation: portrait) {
         body {
           background-image: url('https://raw.githubusercontent.com/Saint-Mikolai/deck2deal_images/main/deck2deal_all_m.jpg');
           background-size: contain;
           background-repeat: no-repeat;
           background-position: center top;
         }
-        
-        .contact-container {
-          position: absolute;
-          top: 65%; /* Подняли позицию выше */
-          left: 0;
-          right: 0;
-          margin-bottom: 0; /* Убрали нижний отступ для мобильной версии */
-        }
       }
 
       .contact-container {
+        margin-bottom: 8%;
         width: 100%;
         text-align: center;
-        margin-bottom: 8%; /* Отступ для десктопной версии */
       }
 
       .contact-link {
