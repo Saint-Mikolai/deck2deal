@@ -33,6 +33,10 @@
         text-transform: uppercase;
         transition: opacity 0.3s ease;
         padding: 10px 20px;
+        border: 2px solid #00CED1;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 4px;
+        display: inline-block;
       }
 
       .contact-link:hover {
@@ -49,7 +53,7 @@
         }
 
         .contact-container {
-          bottom: 20%; 
+          bottom: 15%;
           width: 70%;
           max-width: 240px;
         }
@@ -67,7 +71,7 @@
       /* Медиа-запрос для мобильных устройств в ландшафтной ориентации */
       @media only screen and (max-width: 896px) and (orientation: landscape) {
         .contact-container {
-          bottom: 10%;
+          bottom: 5%; /* Изменено с 10% на 5% */
         }
 
         .contact-link {
