@@ -1,88 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Deck2Deal</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      body {
-        background-image: url('https://raw.githubusercontent.com/Saint-Mikolai/deck2deal_images/main/deck2deal_all_.jpg');
-        background-size: cover;
-        background-position: center;
-        min-height: 100vh;
-        margin: 0;
-        padding: 0;
-        position: relative;
-      }
-      .contact-container {
-        position: absolute;
-        left: 52%; /* Смещение вправо на 2% */
-        bottom: 8%;
-        transform: translateX(-50%);
-        width: auto;
-        text-align: center;
-        z-index: 10;
-      }
-      .contact-link {
-        color: #00CED1;
-        font-size: 1.2rem;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        transition: opacity 0.3s ease;
-        padding: 10px 20px;
-        border: 2px solid #00CED1;
-        background-color: rgba(0, 0, 0, 0.7);
-        border-radius: 4px;
-        display: inline-block;
-      }
-      .contact-link:hover {
-        opacity: 0.8;
-      }
-      /* Медиа-запрос для мобильных устройств в портретной ориентации */
-      @media only screen and (max-width: 768px) and (orientation: portrait) {
-        body {
-          background-image: url('https://raw.githubusercontent.com/Saint-Mikolai/deck2deal_images/main/deck2deal_all_m.jpg');
-          background-size: contain;
-          background-repeat: no-repeat;
-          background-position: center top;
-        }
-        .contact-container {
-          bottom: 23%; /* Поднято на 3% от предыдущего значения 20% */
-          width: 55%; /* Уменьшено на 15% от предыдущего значения 70% */
-          max-width: 204px; /* Уменьшено на 15% от предыдущего значения 240px */
-          left: 52%; /* Возвращаем к центру для мобильной версии */
-        }
-        .contact-link {
-          font-size: 0.8rem;
-          padding: 8px 16px;
-          display: block;
-          width: 100%;
-          text-align: center;
-          letter-spacing: 1px;
-        }
-      }
-      /* Медиа-запрос для мобильных устройств в ландшафтной ориентации */
-      @media only screen and (max-width: 896px) and (orientation: landscape) {
-        .contact-container {
-          bottom: 5%;
-          left: 50%; /* Возвращаем к центру для мобильной версии */
-        }
-        .contact-link {
-          font-size: 0.8rem;
-          padding: 6px 12px;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="contact-container">
-      <a 
-        href="contacts.html" 
-        class="contact-link"
-      >
-        Contact Deck2Deal
-      </a>
-    </div>
-  </body>
+ <head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Deck2Deal</title>
+   <script src="https://cdn.tailwindcss.com"></script>
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+   <style>
+     body {
+       background-image: url('https://raw.githubusercontent.com/Saint-Mikolai/deck2deal_images/main/deck2deal_all_.jpg');
+       background-size: cover;
+       background-position: center;
+       min-height: 100vh;
+       margin: 0;
+       padding: 0;
+       position: relative;
+     }
+     .contact-container {
+       position: absolute;
+       left: 52%;
+       bottom: 8%;
+       transform: translateX(-50%);
+       width: auto;
+       text-align: center;
+       z-index: 10;
+     }
+     .contact-link {
+       color: #00ddff;
+       font-family: 'Montserrat', sans-serif;
+       font-size: 1.2rem;
+       letter-spacing: 2px;
+       text-transform: uppercase;
+       transition: opacity 0.3s ease;
+       padding: 10px 20px;
+       border: 2px solid #00ddff;
+       background-color: transparent;
+       border-radius: 4px;
+       display: inline-block;
+     }
+     .contact-link span {
+       font-weight: 700;
+     }
+     .contact-link:hover {
+       opacity: 0.8;
+     }
+     /* Медиа-запрос для мобильных устройств в портретной ориентации */
+     @media only screen and (max-width: 768px) and (orientation: portrait) {
+       body {
+         background-image: url('https://raw.githubusercontent.com/Saint-Mikolai/deck2deal_images/main/deck2deal_all_m.jpg');
+         background-size: contain;
+         background-repeat: no-repeat;
+         background-position: center top;
+       }
+       .contact-container {
+         bottom: 23%;
+         width: 55%;
+         max-width: 204px;
+         left: 52%;
+       }
+       .contact-link {
+         font-size: 0.8rem;
+         padding: 8px 16px;
+         display: block;
+         width: 100%;
+         text-align: center;
+         letter-spacing: 1px;
+       }
+     }
+     /* Медиа-запрос для мобильных устройств в ландшафтной ориентации */
+     @media only screen and (max-width: 896px) and (orientation: landscape) {
+       .contact-container {
+         bottom: 5%;
+         left: 52%;
+       }
+       .contact-link {
+         font-size: 0.8rem;
+         padding: 6px 12px;
+       }
+     }
+   </style>
+ </head>
+ <body>
+   <div class="contact-container">
+     <a 
+       href="contacts.html" 
+       class="contact-link"
+     >
+       Contact <span>Deck2Deal</span>
+     </a>
+   </div>
+ </body>
 </html>
