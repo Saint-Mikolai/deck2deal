@@ -15,17 +15,15 @@
         padding: 0;
         position: relative;
       }
-
       .contact-container {
         position: absolute;
-        left: 50%;
+        left: 55%; /* Смещение вправо на 5% */
         bottom: 8%;
         transform: translateX(-50%);
         width: auto;
         text-align: center;
         z-index: 10;
       }
-
       .contact-link {
         color: #00CED1;
         font-size: 1.2rem;
@@ -38,11 +36,9 @@
         border-radius: 4px;
         display: inline-block;
       }
-
       .contact-link:hover {
         opacity: 0.8;
       }
-
       /* Медиа-запрос для мобильных устройств в портретной ориентации */
       @media only screen and (max-width: 768px) and (orientation: portrait) {
         body {
@@ -51,13 +47,12 @@
           background-repeat: no-repeat;
           background-position: center top;
         }
-
         .contact-container {
-          bottom: 20%;
-          width: 70%;
-          max-width: 240px;
+          bottom: 23%; /* Поднято на 3% от предыдущего значения 20% */
+          width: 55%; /* Уменьшено на 15% от предыдущего значения 70% */
+          max-width: 204px; /* Уменьшено на 15% от предыдущего значения 240px */
+          left: 50%; /* Возвращаем к центру для мобильной версии */
         }
-
         .contact-link {
           font-size: 0.8rem;
           padding: 8px 16px;
@@ -67,13 +62,12 @@
           letter-spacing: 1px;
         }
       }
-
       /* Медиа-запрос для мобильных устройств в ландшафтной ориентации */
       @media only screen and (max-width: 896px) and (orientation: landscape) {
         .contact-container {
-          bottom: 5%; /* Изменено с 10% на 5% */
+          bottom: 5%;
+          left: 50%; /* Возвращаем к центру для мобильной версии */
         }
-
         .contact-link {
           font-size: 0.8rem;
           padding: 6px 12px;
